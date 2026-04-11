@@ -1,0 +1,108 @@
+.catalog-section {
+    padding: 4rem 1.5rem;
+}
+
+.catalog-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.catalog-subtitle {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    max-width: 300px;
+    text-align: right;
+}
+
+.catalog-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.catalog-filters::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-text-secondary);
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-family-base);
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition-fast);
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-primary);
+}
+
+.filter-btn.active {
+    background: var(--color-accent-primary);
+    border-color: var(--color-accent-primary);
+    color: white;
+}
+
+.catalog-card .product-info {
+    padding: 1rem;
+}
+
+.compact-name {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.add-to-cart-overlay {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent-primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 20;
+    white-space: nowrap;
+}
+
+.product-card:hover .add-to-cart-overlay {
+    bottom: 20px;
+    opacity: 1;
+}
+
+.add-to-cart-overlay:hover {
+    background: var(--color-accent-primary-hover);
+    box-shadow: var(--glow-accent);
+}
+
+@media (max-width: 768px) {
+    .catalog-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .catalog-subtitle {
+        text-align: left;
+    }
+}

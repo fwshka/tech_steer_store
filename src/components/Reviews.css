@@ -1,0 +1,99 @@
+.reviews-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--color-bg-base) 0%, rgba(26, 26, 26, 0.4) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.reviews-section .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.reviews-section h2 {
+    font-size: 2.5rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.reviews-section .subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.reviews-section .subtitle strong {
+    color: var(--color-accent-primary);
+}
+
+.avito-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-accent-primary);
+    color: var(--color-text-primary);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-normal);
+}
+
+.avito-link:hover {
+    background-color: var(--color-accent-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--glow-accent);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(230, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.review-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-elevated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.review-card:hover .review-image {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .reviews-section h2 {
+        font-size: 2rem;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
