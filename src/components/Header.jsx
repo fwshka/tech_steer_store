@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Header.css';
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -13,9 +12,8 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
     return (
+        <>
         <header className={`header glass-panel ${isScrolled ? 'scrolled' : ''}`}>
             <div className="header-container container">
                 <div className="logo">
@@ -46,33 +44,26 @@ const Header = () => {
                         </svg>
                         <span className="cart-count">0</span>
                     </button>
-                    
-                    <div className="mobile-menu-btn" onClick={toggleMenu}>
-                        <span className={`burger-line ${isMenuOpen ? 'open-1' : ''}`}></span>
-                        <span className={`burger-line ${isMenuOpen ? 'open-2' : ''}`}></span>
-                        <span className={`burger-line ${isMenuOpen ? 'open-3' : ''}`}></span>
-                    </div>
                 </div>
             </div>
-
-            <div className={`mobile-menu-overlay ${isMenuOpen ? 'active' : ''}`}>
-                <div className="mobile-menu-close" onClick={toggleMenu}>✕</div>
-                <nav className="mobile-nav-links">
-                    <a href="#catalog" className="nav-link-ai" onClick={toggleMenu}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                        <span>Каталог</span>
-                    </a>
-                    <a href="#blog" className="nav-link-ai" onClick={toggleMenu}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
-                        <span>Блог</span>
-                    </a>
-                    <a href="https://t.me/techsteer" className="nav-link-ai" target="_blank" rel="noopener noreferrer" onClick={toggleMenu} style={{ borderColor: 'rgba(230,0,0,0.5)', background: 'linear-gradient(90deg, rgba(230,0,0,0.1) 0%, rgba(26,26,26,0.3) 100%)' }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 2 11 13"></path><path d="m22 2-7 20-4-9-9-4Z"></path></svg>
-                        <span>Сборка ПК на заказ</span>
-                    </a>
-                </nav>
-            </div>
         </header>
+
+        {/* Mobile Bottom Navigation */}
+        <nav className="bottom-nav">
+            <a href="#catalog" className="bottom-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                <span>Каталог</span>
+            </a>
+            <a href="#blog" className="bottom-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
+                <span>Блог</span>
+            </a>
+            <a href="https://t.me/techsteer" className="bottom-nav-item highlight-pc" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 2 11 13"></path><path d="m22 2-7 20-4-9-9-4Z"></path></svg>
+                <span>Сборка</span>
+            </a>
+        </nav>
+        </>
     );
 };
 
