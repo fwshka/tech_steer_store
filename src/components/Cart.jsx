@@ -13,7 +13,7 @@ const CITY_DATA = [
 
 const Cart = () => {
     const { cartItems, isCartOpen, setIsCartOpen, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
-    const [formData, setFormData] = useState({ name: '', phone: '', telegram: '', deliveryMethod: 'Самовивоз', address: '' });
+    const [formData, setFormData] = useState({ name: '', phone: '', telegram: '', deliveryMethod: 'Самовывоз', address: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
     
@@ -77,7 +77,7 @@ const Cart = () => {
                     clearCart();
                     setIsCartOpen(false);
                     setSubmitSuccess(false);
-                    setFormData({ name: '', phone: '', deliveryMethod: 'Самовивоз', address: '' });
+                    setFormData({ name: '', phone: '', deliveryMethod: 'Самовывоз', address: '' });
                 }, 3000);
             } else {
                 alert('Произошла ошибка при отправке заказа.');
@@ -183,11 +183,11 @@ const Cart = () => {
                                             <input 
                                                 type="radio" 
                                                 name="method" 
-                                                value="Самовивоз"
-                                                checked={formData.deliveryMethod === 'Самовивоз'}
+                                                value="Самовывоз"
+                                                checked={formData.deliveryMethod === 'Самовывоз'}
                                                 onChange={(e) => setFormData({ ...formData, deliveryMethod: e.target.value })}
                                                 style={{ marginRight: '8px', accentColor: '#000' }}
-                                            /> Самовивоз
+                                            /> Самовывоз
                                         </label>
                                         <label style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                                             <input 
