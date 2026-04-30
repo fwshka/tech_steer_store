@@ -177,11 +177,6 @@
     .logo {
         transition: opacity 0.3s ease, transform 0.3s ease;
     }
-    .header.scrolled .logo {
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-10px);
-    }
     .header-container {
         height: 70px;
     }

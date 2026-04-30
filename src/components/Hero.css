@@ -248,9 +248,19 @@
         justify-content: center;
     }
 
-    .floating-1,
+    .small-float {
+        width: 140px;
+    }
+
+    .floating-1 {
+        bottom: 10%;
+        left: 0%;
+        z-index: 1;
+    }
+
     .floating-2 {
-        display: none;
-        /* Hide floating images on smaller screens */
+        top: 10%;
+        right: 0%;
+        z-index: 1;
     }
 }
