@@ -76,7 +76,7 @@ const allProducts = [
         image: '/t300.jpg',
         gallery: ['/t300.jpg', '/t300-2.jpg'],
         videoUrl: '/t300-video.mp4',
-        status: 'Под заказ',
+        status: 'В наличии',
         category: 'Игровые рули',
         characteristics: [
             { label: 'Угол поворота', value: '1080°' },
@@ -108,7 +108,7 @@ const allProducts = [
         image: '/mozar5.jpg',
         gallery: ['/mozar5.jpg', '/mozar5-1.jpg'],
         videoUrl: '/moza-r5-video_1.mp4',
-        status: 'Под заказ',
+        status: 'В наличии',
         category: 'Игровые рули',
         characteristics: [
             { label: 'Угол поворота', value: 'Неограничен (Direct Drive)' },
@@ -123,7 +123,7 @@ const allProducts = [
         price: '14 990 ₽',
         image: '/pxnv99_1.jpg',
         gallery: ['/pxnv99_1.jpg', '/pxnv99_2.jpg', '/pxnv99_3.jpg'],
-        status: 'Под заказ',
+        status: 'В наличии',
         category: 'Игровые рули',
         characteristics: [
             { label: 'Угол поворота', value: '900° / 270°' },
